@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart'; 
+void main() {
+runApp(const MyApp());
+}
+class MyApp extends StatelessWidget
+{const MyApp({super.key});
+@override
+Widget build(BuildContext context)
+{return MaterialApp( 
+title: 'List View',
+debugShowCheckedModeBanner: false, 
+home: Scaffold(
+appBar: AppBar(
+title: const Text('List View'),
+),
+body:
+ListView.separated( itemBuilder: 
+(context, position) {return Card(
+child: Padding(
+padding: const EdgeInsets.all(15.0), 
+child: Text(
+'List Item $position',
+),
+FACULTYOF ENGINEERING AND TECHNOLOGY
+Department of Computer Engineering 
+App Development Using Flutter (01CE0610)
+92100103084 Batch – 6TC6 A
+),
+);
+},
+separatorBuilder: (context, position)
+{return Card(
+color: Colors.grey, 
+child: Padding(
+padding: const EdgeInsets.all(5.0), 
+child: Text(
+'Separator $position',
+style: TextStyle(color: Colors.white),
+),
+),
+);
+},itemCount: 20,
+),
+),
+);
+}
+}
