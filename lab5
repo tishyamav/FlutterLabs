@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart';
+void main()
+{ runApp(MyApp());
+}
+class MyApp extends StatelessWidget
+{ @override
+Widget build(BuildContext context)
+{ return
+MaterialApp( debugShowCheckedMode 
+Banner: false, home: LoginPage(),
+);
+}
+}
+class LoginPage extends StatelessWidget {
+final TextEditingController _emailController = TextEditingController(); 
+final TextEditingController _passwordController = TextEditingController();
+@override
+Widget build(BuildContext context)
+{ return Scaffold(
+appBar: AppBar(
+FACULTYOF ENGINEERING AND TECHNOLOGY
+Department of Computer Engineering 
+App Development Using Flutter (01CE0610)
+92100103084 Batch– 6TC6 A
+title: Text('Login'),
+),
+body: Padding(
+padding: EdgeInsets.all(16.0), 
+child: Column(
+mainAxisAlignment: MainAxisAlignment.center, 
+crossAxisAlignment: CrossAxisAlignment.stretch, 
+children: <Widget>[
+TextField(
+controller: _emailController, 
+decoration:
+InputDecoration( labelText: 
+'Email',
+),
+),
+SizedBox(height: 12.0), 
+TextField(
+controller: _passwordController, 
+decoration:
+InputDecoration( labelText: 
+'Password',
+),
+obscureText: true,
+),
+SizedBox(height: 24.0), 
+GestureDetector( onTap:
+() {
+// Perform login logic here
+String email = _emailController.text;
+FACULTYOF ENGINEERING AND TECHNOLOGY
+Department of Computer Engineering 
+App Development Using Flutter (01CE0610)
+92100103084 Batch– 6TC6 A
+String password = _passwordController.text;
+// Add your authentication logic here
+print('Email: $email'); 
+print('Password: $password');
+},
+child: Container(
+padding: EdgeInsets.symmetric(vertical: 15.0), 
+decoration: BoxDecoration(
+color: Colors.blue,
+borderRadius: BorderRadius.circular(8.0),
+),
+child: 
+Center( child: 
+Text( 'Login',
+style:
+TextStyle( color: 
+Colors.white, 
+fontSize: 16.0,
+),
+),
+),
+),
+),
+],
+),
+),
+);
+}
